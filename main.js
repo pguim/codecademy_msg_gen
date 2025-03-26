@@ -42,10 +42,10 @@ const jokeBuilder = () => {
   const emoji = getRandomWord(joke.emojis)
 
   // Check if some part of word is missing
-  if (noun[0] === '' || noun[1] === '' || verb === '' || adjective === '' || emoji === '') return 'Sorry! We\'re not in the mood for jokes now...'
+  if (noun[0] === '' || noun[1] === '' || verb === '' || adjective === '' || emoji === '') return '<h1>Sorry! We\'re not in the mood for jokes now...</h1><p class="emoji">😴</p>'
 
   // Return build joke
-  return `- Why did the ${noun[0]} ${verb} ${noun[1]}?\n- Because the ${noun[1]} is ${adjective}!\n ${emoji}${emoji}${emoji}`
+  return `<h1> - Why did the ${noun[0]} ${verb} ${noun[1]}?</h1><h1> - Because the ${noun[1]} is ${adjective}!</h1><p class="emoji">${emoji}${emoji}${emoji}</p>`
 
 }
 
@@ -56,5 +56,4 @@ const jokeBuilder = () => {
 }*/
 
 // Test jokeBuilder
-
-console.log(jokeBuilder())
+/* onsole.log(jokeBuilder()) */
