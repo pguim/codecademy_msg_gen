@@ -17,5 +17,26 @@ const joke = {
   emojis: ['🥳', '😭', '🤣', '🙈', '😂', '😲', '🤯']
 }
 
+// Given an array, returns a random values from it
+const getRandomIndex = (arr) => {
+
+  //Check wether given data is an array (actually an object)
+  if (typeof arr !== 'object') return ''
+
+  // Check minimum array length
+  const len = arr.length
+  if (len < 1) return ''
+
+  // Get random index from 0 to upper bound from array
+  const idx = Math.floor(Math.random() * len)
+
+  // Return value in array in random position
+  return arr[idx]
+}
 
 
+// Test "getRandomIndex" functionality with smallest array
+// Should eventualy return all possible values
+/*for (let i = 0; i < 50; i++) {
+  console.log(getRandomIndex(joke.emojis))
+}*/
