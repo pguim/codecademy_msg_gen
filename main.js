@@ -18,7 +18,7 @@ const joke = {
 }
 
 // Given an array, returns a random values from it
-const getRandomIndex = (arr) => {
+const getRandomWord = arr => {
 
   //Check wether given data is an array (actually an object)
   if (typeof arr !== 'object') return ''
@@ -34,9 +34,27 @@ const getRandomIndex = (arr) => {
   return arr[idx]
 }
 
+const jokeBuilder = () => {
 
-// Test "getRandomIndex" functionality with smallest array
+  const noun = [getRandomWord(joke.nouns), getRandomWord(joke.nouns)]
+  const verb = getRandomWord(joke.verbs)
+  const adjective = getRandomWord(joke.adjectives)
+  const emoji = getRandomWord(joke.emojis)
+
+  // Check if some part of word is missing
+  if (noun[0] === '' || noun[1] === '' || verb === '' || adjective === '' || emoji === '') return 'Sorry! We\'re not in the mood for jokes now...'
+
+  // Return build joke
+  return `- Why did the ${noun[0]} ${verb} ${noun[1]}?\n- Because the ${noun[1]} is ${adjective}!\n ${emoji}${emoji}${emoji}`
+
+}
+
+// Test "getRandomWord" functionality with smallest array
 // Should eventualy return all possible values
 /*for (let i = 0; i < 50; i++) {
-  console.log(getRandomIndex(joke.emojis))
+  console.log(getRandomWord(joke.emojis))
 }*/
+
+// Test jokeBuilder
+
+console.log(jokeBuilder())
